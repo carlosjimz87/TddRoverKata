@@ -22,6 +22,6 @@ Create an API that moves a rover around on a grid.
 - [ ] The grid may have obstacles. If a given sequence of commands encounters an obstacle, the rover moves up to the last possible point and reports the obstacle e.g. O:2:2:N.
 
 
-## Based on
+## Thanks to
 
-[@sandromancuso](https://www.github.com/sandromancuso)'s video -> https://youtu.be/24vzFAvOzo0
+This awesome [video](https://youtu.be/24vzFAvOzo0) of [@sandromancuso](https://www.github.com/sandromancuso) 
