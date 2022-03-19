@@ -44,4 +44,16 @@ public class RoverTest {
     public void rotate_left(String commands, String position) {
         assertThat(rover.execute(commands)).isEqualTo(position);
     }
+
+    @Test
+    @Parameters({
+            "M,0:9:N",
+            "RM,1:0:E",
+            "RRM,0:1:S",
+            "RRRM,9:0:W",
+    })
+    public void move(String commands, String position) {
+        assertThat(rover.execute(commands)).isEqualTo(position);
+    }
+
 }

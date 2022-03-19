@@ -1,9 +1,8 @@
 package com.carlosjimz87.tddroverkata
 
 class Rover {
-    private val x = 0
-    private val y = 0
-    var direction: Direction = Direction.NORTH
+    private var position: Position = Position()
+    private var direction: Direction = Direction.NORTH
 
     fun execute(commands: String): String {
 
@@ -16,10 +15,34 @@ class Rover {
                     'L' -> {
                         direction = direction.left()
                     }
+                    'M' -> {
+                        position = move()
+                    }
                 }
             }
         }
-        return "$x:$y:$direction"
+        return "$position$direction"
+    }
+
+    fun move(): Position {
+        when (direction) {
+            Direction.EAST -> {
+                val newPos = (position.x + 1) % MAX_WIDTH
+                return Position(newPos,position.y)
+            }
+            Direction.WEST -> {
+                val newPos = if (position.x > 0) position.x - 1 else MAX_WIDTH - 1
+                return Position(newPos,position.y)
+            }
+            Direction.NORTH -> {
+                val newPos = if (position.y > 0) position.y - 1 else MAX_HEIGHT - 1
+                return Position(position.x,newPos)
+            }
+            Direction.SOUTH -> {
+                val newPos = (position.y + 1) % MAX_HEIGHT
+                return Position(position.x,newPos)
+            }
+        }
     }
 
     companion object {
