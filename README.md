@@ -5,13 +5,13 @@ Create an API that moves a rover around on a grid.
 
 ## Rules:
 
-[ ] - You are given the initial starting point (0,0,N) of rover.
+[X] - You are given the initial starting point (0,0,N) of rover.
 
-[ ] - 0,0 are X,Y coordinates on a grid of (10,10).
+[X] - 0,0 are X,Y coordinates on a grid of (10,10).
 
-[ ] - N is the direction it is facing (i.e. N,S,E,W)
+[X] - N is the direction it is facing (i.e. N,S,E,W)
 
-[ ] - L and R allow the rover to rotate left and right.
+[X] - L and R allow the rover to rotate left and right.
 
 [ ] - M allows the rover to move one point in the current direction.
 
