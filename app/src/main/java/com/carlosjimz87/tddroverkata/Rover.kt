@@ -3,28 +3,23 @@ package com.carlosjimz87.tddroverkata
 class Rover {
     private val x = 0
     private val y = 0
-    private var d = 0
-    private val directions = listOf("N", "E", "S", "W")
+    var direction: Direction = Direction.NORTH
 
     fun execute(commands: String): String {
+
         if (commands.isNotEmpty()) {
             commands.forEach { c ->
                 when (c) {
-                    'R' -> rotateRight()
-                    'L' -> rotateLeft()
+                    'R' -> {
+                        direction = direction.right()
+                    }
+                    'L' -> {
+                        direction = direction.left()
+                    }
                 }
             }
         }
-
-        return "$x:$y:${directions[d]}"
-    }
-
-    private fun rotateRight() {
-        d = (d + 1) % directions.size
-    }
-
-    private fun rotateLeft() {
-        d = if (d > 0) d - 1 else directions.size - 1
+        return "$x:$y:$direction"
     }
 
     companion object {
