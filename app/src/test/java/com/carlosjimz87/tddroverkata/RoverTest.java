@@ -51,8 +51,24 @@ public class RoverTest {
             "RM,1:0:E",
             "RRM,0:1:S",
             "RRRM,9:0:W",
+            "RMMMMM,5:0:E",
+            "RMMMMMMMMMM,0:0:E",
+            "RMMMMMMMMMMMMMMM,5:0:E",
     })
-    public void move(String commands, String position) {
+    public void move_right(String commands, String position) {
+        assertThat(rover.execute(commands)).isEqualTo(position);
+    }
+
+    @Test
+    @Parameters({
+            "LM,9:0:W",
+            "LLM,0:1:S",
+            "LLLM,1:0:E",
+            "LMMMMM,5:0:W",
+            "LMMMMMMMMMM,0:0:W",
+            "LMMMMMMMMMMMMMMM,5:0:W",
+    })
+    public void move_left(String commands, String position) {
         assertThat(rover.execute(commands)).isEqualTo(position);
     }
 
